@@ -4,8 +4,8 @@ import Model.mahasiswa;
 import TubesBeneran.RegisMurid;
 
 public class ctrlMurid {
-    private RegisMurid regM;
-    private mahasiswa mhs;
+    private RegisMurid regM; //kita membuat object referensi class
+    private mahasiswa mhs; // variabel mhs sebagai variabel referensi class mahasiswa
     
     public ctrlMurid(){
         

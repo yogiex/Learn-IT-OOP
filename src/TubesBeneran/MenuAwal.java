@@ -32,6 +32,8 @@ public class MenuAwal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel2.setIcon(new javax.swing.ImageIcon("/home/mirage/Pictures/icon/distance-education-elearning-icon_24908-26902.jpg")); // NOI18N
         jLabel2.setText("jLabel2");
 

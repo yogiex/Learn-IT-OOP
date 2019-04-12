@@ -5,6 +5,8 @@
         <group>
             <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/loginform.java</file>
             <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/Model/mahasiswa.java</file>
+            <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/control/connectionDB.java</file>
+            <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/control/ctrlRegisTentor.java</file>
             <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/control/ctrlMurid.java</file>
             <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/Login.java</file>
             <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/TubesBeneran/RegisMurid.java</file>

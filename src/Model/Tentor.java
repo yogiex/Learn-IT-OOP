@@ -10,7 +10,7 @@ package Model;
  * @author mirage
  */
 public class Tentor {
-    private String namaTnt;
+    private String namaTnt; //nama variabel nama tentor, begitu seterusnya
     private String userTnt;
     private String passTnt;
     private int umurTnt;

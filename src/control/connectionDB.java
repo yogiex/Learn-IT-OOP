@@ -11,9 +11,9 @@ public class connectionDB {
     private ArrayList<ctrlMurid> ctrlMurids = new ArrayList<>();
     public void connection(){
         try{
-            String url="jdbc:mysql://localhost/admin";
-            String user="yogiex";
-            String pass="Henshin913";
+            String url="jdbc:mysql://localhost/admin"; //sesuaikan dengan yang ada di databasenya
+            String user="yogiex"; //nama user
+            String pass="pass"; //nama password user
             conn = DriverManager.getConnection(url, user, pass);
             stmt = conn.createStatement();
             JOptionPane.showMessageDialog(null, "Connected");

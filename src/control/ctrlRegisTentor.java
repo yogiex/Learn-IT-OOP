@@ -8,6 +8,7 @@ public class ctrlRegisTentor {
     private RegisGuru regGuru;
     private Tentor tentor;
     
+    
     public ctrlRegisTentor(){
         
     }
