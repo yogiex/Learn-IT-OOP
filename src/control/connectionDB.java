@@ -4,19 +4,27 @@ import java.sql.*;
 import java.util.*;
 import javax.swing.JOptionPane;
 import java.util.logging.*;
+import java.sql.Connection;  
+import java.sql.DriverManager;  
+import java.sql.ResultSet;  
+import java.sql.Statement; 
+
+
 public class connectionDB {
     private Connection conn= null;
-    private Statement stmt = null;
+    private Statement stm = null;
     private ResultSet rs = null;
     private ArrayList<ctrlMurid> ctrlMurids = new ArrayList<>();
     public void connection(){
         try{
-            String url="jdbc:mysql://localhost/admin"; //sesuaikan dengan yang ada di databasenya
-            String user="yogiex"; //nama user
-            String pass="pass"; //nama password user
-            conn = DriverManager.getConnection(url, user, pass);
-            stmt = conn.createStatement();
-            JOptionPane.showMessageDialog(null, "Connected");
+           String url="jdbc:mysql://localhost/admin"; //sesuaikan dengan yang ada di databasenya
+           String user="yogiex"; //nama user
+           String pass=""; //nama pass   word user
+         //Class.forName("com.mysql.jdbc.Driver");
+          
+           conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/user",user,pass);
+           stm = conn.createStatement();
+           JOptionPane.showMessageDialog(null, "Connected");
     
     
         }catch(SQLException ex){

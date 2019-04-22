@@ -3,17 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/loginform.java</file>
+            <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/TubesBeneran/LoginForm.java</file>
             <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/Model/mahasiswa.java</file>
             <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/control/connectionDB.java</file>
             <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/control/ctrlRegisTentor.java</file>
             <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/control/ctrlMurid.java</file>
-            <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/Login.java</file>
             <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/TubesBeneran/RegisMurid.java</file>
             <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/TubesBeneran/MenuAwal.java</file>
             <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/TubesBeneran/RegisGuru.java</file>
-            <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/registerForm.java</file>
-            <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/RegistrasiMurid.java</file>
             <file>file:/home/mirage/Documents/kuliah/nyicil/tubes/src/Model/Tentor.java</file>
         </group>
     </open-files>

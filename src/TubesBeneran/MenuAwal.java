@@ -1,5 +1,7 @@
 package TubesBeneran;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author mirage
@@ -39,9 +41,15 @@ public class MenuAwal extends javax.swing.JFrame {
 
         regisTentorClick.setBackground(new java.awt.Color(255, 153, 0));
         regisTentorClick.setText("Pengajar");
+        regisTentorClick.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         regisTentorClick.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 regisTentorClickMouseClicked(evt);
+            }
+        });
+        regisTentorClick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regisTentorClickActionPerformed(evt);
             }
         });
 
@@ -141,7 +149,9 @@ public class MenuAwal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginMasukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginMasukMouseClicked
-        // TODO add your handling code here:
+        dispose();
+        LoginForm lg = new LoginForm();
+        lg.setVisible(true);
         
     }//GEN-LAST:event_LoginMasukMouseClicked
 
@@ -152,9 +162,18 @@ public class MenuAwal extends javax.swing.JFrame {
     }//GEN-LAST:event_regisTentorClickMouseClicked
 
     private void regisMuridClickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regisMuridClickActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        RegisMurid rm = new RegisMurid();
+        rm.setVisible(true);
         
     }//GEN-LAST:event_regisMuridClickActionPerformed
+
+    private void regisTentorClickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regisTentorClickActionPerformed
+        //close();
+        dispose();
+        RegisGuru rg = new RegisGuru();
+        rg.setVisible(true);
+    }//GEN-LAST:event_regisTentorClickActionPerformed
 
     /**
      * @param args the command line arguments

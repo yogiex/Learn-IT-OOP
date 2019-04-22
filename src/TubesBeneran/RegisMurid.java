@@ -60,7 +60,7 @@ public class RegisMurid extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         pass = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        jclickMuridtoMenuAwal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,7 +97,12 @@ public class RegisMurid extends javax.swing.JFrame {
 
         jButton1.setText("Create");
 
-        jLabel5.setText("Back");
+        jclickMuridtoMenuAwal.setText("Back");
+        jclickMuridtoMenuAwal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jclickMuridtoMenuAwalMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -108,7 +113,7 @@ public class RegisMurid extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
+                        .addComponent(jclickMuridtoMenuAwal)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -150,7 +155,7 @@ public class RegisMurid extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jLabel5))
+                    .addComponent(jclickMuridtoMenuAwal))
                 .addGap(50, 50, 50))
         );
 
@@ -172,6 +177,13 @@ public class RegisMurid extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jclickMuridtoMenuAwalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jclickMuridtoMenuAwalMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        MenuAwal ma = new MenuAwal();
+        ma.setVisible(true);
+    }//GEN-LAST:event_jclickMuridtoMenuAwalMouseClicked
 
     /**
      * @param args the command line arguments
@@ -214,9 +226,9 @@ public class RegisMurid extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jclickMuridtoMenuAwal;
     private javax.swing.JTextField nama;
     private javax.swing.JTextField nim;
     private javax.swing.JPasswordField pass;
