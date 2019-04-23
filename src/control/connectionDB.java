@@ -19,16 +19,19 @@ public class connectionDB {
         try{
            String url="jdbc:mysql://localhost/admin"; //sesuaikan dengan yang ada di databasenya
            String user="yogiex"; //nama user
-           String pass=""; //nama pass   word user
-         //Class.forName("com.mysql.jdbc.Driver");
-          
-           conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/user",user,pass);
+           String pass="Henshin913"; //nama pass   word user
+           Class.forName("com.mysql.jdbc.Driver");
+          //Class.forName("com.mysql.jdbc.Driver");
+           conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin",user,pass);
            stm = conn.createStatement();
            JOptionPane.showMessageDialog(null, "Connected");
     
     
         }catch(SQLException ex){
            Logger.getLogger(ctrlMurid.class.getName()).log(Level.SEVERE,null,ex);
-    }
+    }   catch (ClassNotFoundException ex) {
+            Logger.getLogger(connectionDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
 }
+    
 }
