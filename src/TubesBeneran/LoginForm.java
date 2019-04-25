@@ -7,24 +7,30 @@ package TubesBeneran;
 
 import control.connectionDB;
 import control.ctrlMurid;
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import java.sql.*;
 
 public class LoginForm extends javax.swing.JFrame {
 
     
-    Connection con;
+    Connection conn = null;
     Statement stat;
-    ResultSet rs;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
     String sql;
     /**
      * Creates new form LoginForm
      */
     public LoginForm() {
         initComponents();
-        
+        connectionDB DB = new connectionDB();
+        DB.connect();
+        conn = DB.conn;
+        stat = DB.stm;
         
     }
     
@@ -42,8 +48,8 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextFieldLoginUser = new javax.swing.JTextField();
-        jPasswordField1Login = new javax.swing.JPasswordField();
+        txt_userLogin = new javax.swing.JTextField();
+        txt_userPass = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btnLogin = new javax.swing.JToggleButton();
@@ -57,8 +63,6 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel1.setText("Username");
 
         jLabel2.setText("Password");
-
-        jPasswordField1Login.setText("jPasswordField1");
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 255));
 
@@ -111,9 +115,9 @@ public class LoginForm extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldLoginUser, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField1Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txt_userLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                    .addComponent(txt_userPass))
                 .addGap(50, 50, 50))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -134,11 +138,11 @@ public class LoginForm extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jTextFieldLoginUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_userLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(91, 91, 91)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
-                            .addComponent(jPasswordField1Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txt_userPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -155,7 +159,7 @@ public class LoginForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,18 +179,21 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        try {
-            sql = "SELECT * FROM admin WHERE username='"+jTextFieldLoginUser.getText()+"' AND password='"+jPasswordField1Login.getText()+"'";
+    conn = connectionDB.connect();
+    sql = "SELECT * FROM admin WHERE username='"+txt_userLogin.getText()+"' AND password='"+txt_userPass.getText()+"'";
             rs = stat.executeQuery(sql);
             if(rs.next()){
-                if(jTextFieldLoginUser.getText().equals(rs.getString("admin")) && jPasswordField1Login.getText().equals(rs.getString("admin"))){
+                if(txt_name.getText().equals(rs.getString("username")) && txt_pass.getText().equals(rs.getString("password"))){
+                	dispose();
+                	FrameUtama mu = new FrameUtama();
+                	mu.setVisible(true);
                     JOptionPane.showMessageDialog(null, "berhasil login");
                 }
             }else{
                     JOptionPane.showMessageDialog(null, "username atau password salah");
                 }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
+    }catch(HeadlessException | SQLException e){
+            JOptionPane.showMessageDialog(null,e);
         }
        
     }//GEN-LAST:event_btnLoginActionPerformed
@@ -235,7 +242,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1Login;
-    private javax.swing.JTextField jTextFieldLoginUser;
+    private javax.swing.JTextField txt_userLogin;
+    private javax.swing.JPasswordField txt_userPass;
     // End of variables declaration//GEN-END:variables
 }

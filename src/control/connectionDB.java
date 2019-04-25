@@ -8,30 +8,25 @@ import java.sql.Connection;
 import java.sql.DriverManager;  
 import java.sql.ResultSet;  
 import java.sql.Statement; 
+import javax.swing.*;
 
 
 public class connectionDB {
-    private Connection conn= null;
-    private Statement stm = null;
+    public Connection conn= null;
+    public Statement stm = null;
     private ResultSet rs = null;
     private ArrayList<ctrlMurid> ctrlMurids = new ArrayList<>();
-    public void connection(){
-        try{
-           String url="jdbc:mysql://localhost/admin"; //sesuaikan dengan yang ada di databasenya
-           String user="yogiex"; //nama user
-           String pass="Henshin913"; //nama pass   word user
-           Class.forName("com.mysql.jdbc.Driver");
-          //Class.forName("com.mysql.jdbc.Driver");
-           conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin",user,pass);
-           stm = conn.createStatement();
-           JOptionPane.showMessageDialog(null, "Connected");
-    
-    
-        }catch(SQLException ex){
+    public void connect(){
+         try{          
+           String url = "jdbc:mysql://localhost/admin";              
+           Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/admin","yogiex","Henshin913");
+           stm = conn.createStatement();         
+          }
+         catch(SQLException ex){
            Logger.getLogger(ctrlMurid.class.getName()).log(Level.SEVERE,null,ex);
-    }   catch (ClassNotFoundException ex) {
-            Logger.getLogger(connectionDB.class.getName()).log(Level.SEVERE, null, ex);
-        }
-}
-    
-}
+           
+        }   
+        
+    }}
+  
+     
