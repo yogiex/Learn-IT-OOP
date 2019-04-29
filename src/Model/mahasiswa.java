@@ -17,6 +17,17 @@ public class mahasiswa {
     private int nim;
     private int umur;
     private String pass;
+    private String user;
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+    
+    
 
     public String getNama() {
         return nama;

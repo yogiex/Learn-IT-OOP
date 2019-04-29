@@ -12,21 +12,16 @@ import javax.swing.*;
 
 
 public class connectionDB {
-    public Connection conn= null;
+    public Connection con = null;
     public Statement stm = null;
     private ResultSet rs = null;
     private ArrayList<ctrlMurid> ctrlMurids = new ArrayList<>();
-    public void connect(){
-         try{          
-           String url = "jdbc:mysql://localhost/admin";              
-           Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/admin","yogiex","Henshin913");
-           stm = conn.createStatement();         
-          }
-         catch(SQLException ex){
-           Logger.getLogger(ctrlMurid.class.getName()).log(Level.SEVERE,null,ex);
-           
-        }   
-        
+    private ArrayList<ctrlRegisTentor> ctrlRegisTentors = new ArrayList<>();
+    
+    public void connect() throws SQLException{
+        String url ="jdbc:mysql://localhost/admin";
+        con =DriverManager.getConnection( url ,"yogiex","Henshin913");   
+//        stm = con.createStatement();
     }}
   
      

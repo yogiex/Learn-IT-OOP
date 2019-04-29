@@ -35,13 +35,15 @@ public class RegisGuru extends javax.swing.JFrame {
         userTnt = new javax.swing.JTextField();
         nikTnt = new javax.swing.JTextField();
         passTnt = new javax.swing.JPasswordField();
-        umurTnt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnInsertRegisTentor = new javax.swing.JButton();
         labelBackToMenu = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -83,28 +85,41 @@ public class RegisGuru extends javax.swing.JFrame {
             }
         });
 
-        umurTnt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                umurTntActionPerformed(evt);
-            }
-        });
-
         jLabel2.setText("Username");
 
-        jLabel3.setText("NIK");
-
-        jLabel5.setText("Umur");
+        jLabel3.setText("NIM");
 
         jLabel6.setText("Password");
 
-        jButton1.setText("Create");
+        btnInsertRegisTentor.setText("Create");
+        btnInsertRegisTentor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertRegisTentorActionPerformed(evt);
+            }
+        });
 
         labelBackToMenu.setText("Back to Menu Awal");
         labelBackToMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelBackToMenuMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labelBackToMenuMouseEntered(evt);
+            }
         });
+
+        jLabel7.setText("Nomer telefon");
+
+        jTextField1.setText(" ");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Email");
+
+        jTextField2.setText(" ");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -118,21 +133,25 @@ public class RegisGuru extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(passTnt, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                            .addComponent(umurTnt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nikTnt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(userTnt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(namaTnt, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(passTnt, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                                .addComponent(nikTnt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(userTnt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(namaTnt, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jTextField1)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addComponent(labelBackToMenu)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 274, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
-                .addGap(85, 85, 85))
+                        .addComponent(btnInsertRegisTentor)
+                        .addGap(25, 25, 25)))
+                .addGap(60, 60, 60))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,17 +168,21 @@ public class RegisGuru extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nikTnt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(45, 45, 45)
+                .addGap(63, 63, 63)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(umurTnt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(58, 58, 58)
+                    .addComponent(jLabel6)
+                    .addComponent(passTnt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(passTnt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(btnInsertRegisTentor)
                     .addComponent(labelBackToMenu))
                 .addContainerGap())
         );
@@ -191,15 +214,28 @@ public class RegisGuru extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_namaTntActionPerformed
 
-    private void umurTntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_umurTntActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_umurTntActionPerformed
-
     private void labelBackToMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBackToMenuMouseClicked
         dispose();
         MenuAwal ma = new MenuAwal();
         ma.setVisible(true);
     }//GEN-LAST:event_labelBackToMenuMouseClicked
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void btnInsertRegisTentorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertRegisTentorActionPerformed
+        // TODO add your handling code here:
+        String sql = "insert into regisTentor (nama,username,nim,,password,noTelp,email)"+"values(?,?,?,?,?,?)";
+        
+                 
+    }//GEN-LAST:event_btnInsertRegisTentorActionPerformed
+
+    private void labelBackToMenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBackToMenuMouseEntered
+        // TODO add your handling code here:
+        validate();
+        repaint();
+    }//GEN-LAST:event_labelBackToMenuMouseEntered
 
     /**
      * @param args the command line arguments
@@ -237,20 +273,22 @@ public class RegisGuru extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnInsertRegisTentor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel labelBackToMenu;
     private javax.swing.JTextField namaTnt;
     private javax.swing.JTextField nikTnt;
     private javax.swing.JPasswordField passTnt;
-    private javax.swing.JTextField umurTnt;
     private javax.swing.JTextField userTnt;
     // End of variables declaration//GEN-END:variables
 }
